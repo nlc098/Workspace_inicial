@@ -1,6 +1,6 @@
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_BY_PROD_COUNT = "Precio";
+const ORDER_BY_PROD_COUNT = "Cant.";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
@@ -55,9 +55,8 @@ function showProductsList(){
                             <h4 class="mb-1">`+ product.name +`</h4>
                             <small class="text-muted">` + product.soldCount + ` artículos</small>
                         </div>
-                        
+                        <h3 class="text-muted"><b>` +"US$ "+ product.cost + `</b></h3>
                         <p class="mb-1">` + product.description + `</p>
-                        <h3><b>` +"$ "+ product.cost + `</b><h3>
                     </div>
                 </div>
             </a>
