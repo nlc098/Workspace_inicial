@@ -21,6 +21,17 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="dropdown">
+          <button class="py-2 d-none d-md-inline-block" type="button" id="b" data-toggle="dropdown">
+            <a href="#" id="asd"></a>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="my-profile.html">Perfil</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="login.html" onclick="salir();">Exit</a>
+            </div>
+         </div>
+      </div> 
       </div>
     </nav>
     <div class="text-center p-4">
@@ -29,6 +40,7 @@
   </div>
     <div class="container">
       <div class="row">
+        <input type="text" id="buscar">
           <div class="col text-right">
               <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                   <label class="btn btn-light active" id="sortAsc" >
@@ -37,9 +49,15 @@
                   <label class="btn btn-light" id="sortDesc" >
                       <input type="radio" name="options" autocomplete="off">Z-A
                   </label>
-                  <label class="btn btn-light" id="sortByCount" >
-                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Precio.
+                  <label class="btn btn-light" id="sortByCostD" >
+                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mayor.
                   </label>
+                  <label class="btn btn-light" id="sortByCostU" >
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor.
+                </label>
+                  <label class="btn btn-light" id="sortBySold" >
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia.
+                </label>
               </div>
           </div>
       </div>

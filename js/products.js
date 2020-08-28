@@ -1,6 +1,8 @@
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_BY_PROD_COUNT = "Cant.";
+const ORDER_BY_PROD_COST_D = "Precio-D";
+const ORDER_BY_PROD_COST_U = "Precio-U";
+const ORDER_BY_PROD_VEND = "Vendidos";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
@@ -21,10 +23,28 @@ function sortProducts(criteria, array){
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_COUNT){
+    }else if (criteria === ORDER_BY_PROD_COST_D){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.cost);
             let bCount = parseInt(b.cost);
+
+            if ( aCount > bCount ){ return -1; }
+            if ( aCount < bCount ){ return 1; }
+            return 0;
+        });
+    }else if (criteria === ORDER_BY_PROD_COST_U){
+        result = array.sort(function(a, b) {
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
+
+            if ( aCount < bCount ){ return -1; }
+            if ( aCount > bCount ){ return 1; }
+            return 0;
+        });
+    }else if (criteria === ORDER_BY_PROD_VEND){
+        result = array.sort(function(a, b) {
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -53,7 +73,7 @@ function showProductsList(){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
+                            <small class="text-muted">` + product.soldCount + ` vendidos</small>
                         </div>
                         <h3 class="text-muted"><b>` +"US$ "+ product.cost + `</b></h3>
                         <p class="mb-1">` + product.description + `</p>
@@ -97,10 +117,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         sortAndShowProducts(ORDER_DESC_BY_NAME);
     });
 
-    document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowProducts(ORDER_BY_PROD_COUNT);
+    document.getElementById("sortByCostD").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_PROD_COST_D);
     });
-
+    
+    document.getElementById("sortBySold").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_PROD_VEND);
+    });
+    
+    document.getElementById("sortByCostU").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_PROD_COST_U);
+    });
+    
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";

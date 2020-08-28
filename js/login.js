@@ -1,14 +1,13 @@
 function validateForm() {
     var username = document.getElementById("U").value;
     var password = document.getElementById("P").value;
-    if (username == null || username == "") {
-        alert("Por favor, ingrese el nombre de usuario.");
+    if (!password || !username) {
+        alert("Por favor, ingrese Datos.");
         return false;
     }
-    if (password == null || password == "") {
-        alert("Por favor, ingrese la contraseña.")
-        return false; 
-    } sessionStorage.setItem('log','Yes');   
+
+        localStorage.setItem('Nombre', username);
+        localStorage.setItem('Contra', password);
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -16,5 +15,4 @@ function validateForm() {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
-
 

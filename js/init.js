@@ -45,7 +45,12 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 
-  if(sessionStorage.getItem("log") == null){
+  if(localStorage.getItem("Nombre") == null || localStorage.getItem("Contra") == null){
     window.location.href="login.html";}
+    document.getElementById("asd").innerHTML= localStorage.getItem("Nombre");
 
 });
+
+function salir(){
+  localStorage.clear(); 
+} 
