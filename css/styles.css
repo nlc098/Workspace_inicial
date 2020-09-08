@@ -191,3 +191,12 @@ img{
   color: #1883ba;
     background-color: #ffffff;
 }
+.coment{
+  background-color: darkgray;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+}
+.com{
+  background-color: gray;
+}
