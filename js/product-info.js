@@ -6,19 +6,16 @@ function showImagesGallery(array){
 
     let htmlContentToAppend = "";
 
-    for(let i = 0; i < array.length; i++){
+    for(let i = 1; i < array.length; i++){
         let imageSrc = array[i];
-
+        
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
+        <div class="carousel-item">
+                <img src="` + imageSrc + `" class="d-block w-100" alt="">
+              </div>
         `
-
-        document.getElementById("productImage").innerHTML = htmlContentToAppend;
     }
+    document.getElementById("productImage").innerHTML += htmlContentToAppend;
 }
 
 
@@ -52,7 +49,7 @@ function showComentarios(array){
     }
 }
 
-function recomendados(){
+function relacionados(){
 
     let htmlContentToAppend = "";
     let a =product.relatedProducts;
@@ -75,6 +72,31 @@ function recomendados(){
              document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
     }
 }
+function agregarcomentario(){
+    let texto= document.getElementById("texto").value;
+    let usuario=localStorage.getItem("Nombre");
+    let stars= document.getElementById("estrellas").value;
+    var f = new Date()
+    let htmlContentToAppend = "";
+        htmlContentToAppend += `
+            <div class="coment">
+            <div class="col">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">`+usuario+ `<span class="fa fa-star checked"></span> `.repeat(stars) +
+                    `<span class="fa fa-star"></span> `.repeat(5-stars) +`</h4>
+                    <small class="text-muted">` + f.getFullYear() + "-"+0+ (f.getMonth() +1) + "-" +f.getDate()+" "+ f.getHours()+":"+ f.getMinutes()+":"+ f.getSeconds()+ `</small>
+                </div>
+                <div>
+                    <p class="mb-1">` +texto+ `</p>  
+                </div>
+        
+        </div>
+            </div>    
+        `
+
+        document.getElementById("comentario").innerHTML += htmlContentToAppend;
+
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -90,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             let productDescriptionHTML = document.getElementById("productDescription");
             let productsoldCountHTML = document.getElementById("productsoldCount");
             let productcostHTML = document.getElementById("productcost");
-            let productcurrencyHTML = document.getElementById("productcost");
+            
 
             
             productcategoryHTML.innerHTML = product.category;
@@ -101,14 +123,13 @@ document.addEventListener("DOMContentLoaded", function(e){
             productcostHTML.innerHTML += product.cost;
             
 
-            //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
 
             getJSONData(PRODUCTS_URL).then(function(resultObj){
                 if (resultObj.status === "ok")
                 {
                     products = resultObj.data;
-                    recomendados();
+                    relacionados();
         
                  }
             });
