@@ -45,32 +45,11 @@
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
           seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
-      <h3 id="productName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Categoria</dt>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
         <dd>
-          <a href="products.html" id="productcat"></a>
-        </dd>
-
-        <dt>Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
-
-        <dt>Cantidad de productos vendidos</dt>
-        <dd>
-          <p id="productsoldCount"></p>
-        </dd>
-
-        <dt>Precio</dt>
-        <dd>
-          <p id="productcost"></p>
-        </dd>
-        
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div style="width: 40rem;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div style="width: 45rem;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -93,6 +72,31 @@
           </div>
           
         </dd>
+          </div>
+          <div class="col-md-4">
+            <h3 id="productName"></h3>
+            <dl>
+              <dt>Categoria</dt>
+              <dd>
+                <a href="products.html" id="productcat"></a>
+              </dd>
+              <dt>Cantidad de productos vendidos</dt>
+              <dd>
+                <p id="productsoldCount"></p>
+              </dd>
+              <dt>Precio</dt>
+              <dd>
+                <p id="productcost"></p>
+              </dd>
+              <dt>Descripción</dt>
+              <dd>
+                <p id="productDescription"></p>
+              </dd>
+          </div>
+        </div>
+      </div>
+        
+        
         <dt>Productos relacionados</dt>
         <dd>
           <div class="row text-center text-lg-left pt-2" id="relatedProducts">
