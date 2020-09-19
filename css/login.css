@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: gainsboro;
+
+}
+.container{
+    position: absolute;
+    transform: translate(10%,50%);
+    background-color: gray;
+}
+
+.login input{
+    margin: 5px;
+}

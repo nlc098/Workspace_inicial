@@ -44,13 +44,26 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
+  document.getElementById("asd").innerHTML= localStorage.getItem("Nombre");
   if(localStorage.getItem("Nombre") == null || localStorage.getItem("Contra") == null){
-    window.location.href="login.html";}
-    document.getElementById("asd").innerHTML= localStorage.getItem("Nombre");
+    document.getElementById("asd").innerHTML="Anonimo";
+    document.getElementById("ini").innerHTML="Iniciar sesion";
+    noiniciado();
+  }
+    
 
 });
 
 function salir(){
-  localStorage.clear(); 
+  localStorage.removeItem("Nombre");
+  localStorage.removeItem("Contra"); 
 } 
+function noiniciado(){
+  a = document.getElementById("per");
+  b = document.getElementById("micar");
+  padre= a.parentNode;
+  padre.removeChild(a);
+  padre= b.parentNode;
+  padre.removeChild(b);
+  
+}
