@@ -33,8 +33,8 @@ function borrar(num){
         let elemento= document.getElementById("article-"+num);
         elemento.style.display="none";
         cart[num].unitCost=0;
-        update()
-        addEventCount();
+        update();
+        
 }
     
 

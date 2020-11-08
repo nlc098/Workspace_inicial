@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 function salir(){
   localStorage.removeItem("Nombre");
   localStorage.removeItem("Contra"); 
+  localStorage.removeItem("perfil");
 } 
 function noiniciado(){
   a = document.getElementById("per");

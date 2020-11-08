@@ -54,26 +54,49 @@
     </div> 
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  
+  <div class="container">
+    <h1 class="text-center">Mi Perfil</h1>
+    
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form id="h">
+        <img src="" id="im1" alt="hola">
+        <div class="form-group">
+          <label for="url">Url:</label>
+          <input type="text" id="url" class="form-control" placeholder="Ingresa url de imagen" name="url">
+        </div>
+        <div class="form-group">
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" class="form-control" placeholder="Ingresa tu nombre completo" name="nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellidos:</label>
+          <input type="text"id="apellido" class="form-control" placeholder="Ingresa tu apellido completo" name="apellido">
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="text" class="form-control" id="correo"  placeholder="Ingresa tu correo" name="correo">
+        </div>
+        <div class="form-group">
+          <label for="tel">Telefono:</label>
+          <input type="number" class="form-control" id="tel"  placeholder="Ingresa tu telefono" name="tel">
+        </div>
+      </form>
+      <div class="text-right">
+        <div class="btn-group btn-group-toggle mb-4 text-right" role="group" aria-label="Basic example">
+          <button type="submit" class="btn btn-dark"  onclick="limpiar();">Limpiar</button>
+          <button type="submit" class="btn btn-success"  id="modificar">Modificar</button>
+          <button type="submit" class="btn btn-danger"  onclick="guardar();">Guardar</button>
+        </div>
+      </div>
+      
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

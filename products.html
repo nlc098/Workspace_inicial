@@ -1,107 +1,147 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        
-        <div class="dropdown">
-          <button class="py-2 d-none d-md-inline-block" type="button" id="b" data-toggle="dropdown">
-            <a href="#" id="asd"></a>
-          </button>
-          <div class="dropdown-menu">
-            <a id="per" class="dropdown-item" href="my-profile.html">Perfil</a>
-            <a id="micar" class="dropdown-item" href="cart.html">Mi carrito</a>
-            <div class="dropdown-divider"></div>
-              <a id="ini" class="dropdown-item" href="login.html" onclick="salir();">Exit</a>
-            </div>
-         </div>
-      </div> 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-md-inline-block" href="sell.html">Vender</a>
+
+      <div class="dropdown">
+        <button class="py-2 d-md-inline-block" type="button" id="b" data-toggle="dropdown">
+          <a href="#" id="asd"></a>
+        </button>
+        <div class="dropdown-menu">
+          <a id="per" class="dropdown-item" href="my-profile.html">Perfil</a>
+          <a id="micar" class="dropdown-item" href="cart.html">Mi carrito</a>
+          <div class="dropdown-divider"></div>
+          <a id="ini" class="dropdown-item" href="login.html" onclick="salir();">Exit</a>
+        </div>
       </div>
-    </nav>
-    <div class="text-center p-4">
-      <h2>Productos</h2>
-      <p class="lead">Verás aquí todas los productos del sitio.</p>
+    </div>
+    </div>
+  </nav>
+  <div class="text-center p-4">
+    <h2>Productos</h2>
+    <p class="lead">Verás aquí todas los productos del sitio.</p>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Filtrar
+    </button>
+    <div class="container">
+    <div class="d-flex justify-content-between mt-2 col-md-3">   
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="buscar">
+    </div>
   </div>
-  <!-- Menu de botones -->
-        
-          <div class="container-fluid mt-5 mb-5">
-            <div class="row g-2" >
-                <div class="col-md-3" style="background-color: lightgray;">
-                  <div class="t-products p-2">
-                        <h6 class="text-uppercase">Buscar</h6>
-                        <div class="p-lists">
-                            <div class="d-flex justify-content-between mt-2"> <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="buscar"> </div>
-                        </div>
-                        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                          <label class="btn btn-light" id="sortBySold" >
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia.
-                        </label>
-                        </div>
-                        
-                    </div>
-                    <div class="t-products p-2" >
-                      <h6 class="text-uppercase">Orden alfabetico</h6>
-                        <div class="p-lists">
-                          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                                <label class="btn btn-light active" id="sortAsc" >
-                                  <input type="radio" name="options" autocomplete="off" checked>A-Z
-                                </label> 
-                                <label class="btn btn-light" id="sortDesc" >
-                                  <input type="radio" name="options" autocomplete="off">Z-A
-                              </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t-products p-2">
-                      <h6 class="text-uppercase">Orden por Precio</h6>
-                      <div class="p-lists">
-                        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                          <label class="btn btn-light" id="sortByCostD" >
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mayor.
-                        </label>
-                        <label class="btn btn-light" id="sortByCostU" >
-                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor.
-                      </label>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="t-products p-2">
-                      <h6 class="text-uppercase">Precio</h6>
-                      <div class="p-lists">
-                          <div class="d-flex justify-content-between mt-2"> <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin"> </div>
-                          <div class="d-flex justify-content-between mt-2"> <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax"> </div>
-                          <div class="d-flex justify-content-between mt-2"> <div class="btn-group" role="group">
-                            <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                            <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-                          </div> </div>
-                      </div>
-  <!--FIN del Menu de botones -->
+    
+              
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true" >
+      <div class="modal-dialog" role="document" >
+        <div class="modal-content"  style="background-color: lightgray;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Filtrar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Menu de botones -->
+            <div>
+              <div class="t-products p-2">
+                
+                <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                  <label class="btn btn-light" id="sortBySold">
+                    <input type="radio" name="options" autocomplete="off"><i
+                      class="fas fa-sort-amount-down mr-1"></i>Relevancia.
+                  </label>
+                </div>
+
+              </div>
+              <div class="t-products p-2">
+                <h6 class="text-uppercase">Orden alfabetico</h6>
+                <div class="p-lists">
+                  <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                    <label class="btn btn-light active" id="sortAsc">
+                      <input type="radio" name="options" autocomplete="off" checked>A-Z
+                    </label>
+                    <label class="btn btn-light" id="sortDesc">
+                      <input type="radio" name="options" autocomplete="off">Z-A
+                    </label>
                   </div>
                 </div>
-                  
-                          <div class="list-group" id="cat-list-container">
-                          </div>
-                            
               </div>
-              
-          
+              <div class="t-products p-2">
+                <h6 class="text-uppercase">Orden por Precio</h6>
+                <div class="p-lists">
+                  <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                    <label class="btn btn-light" id="sortByCostD">
+                      <input type="radio" name="options" autocomplete="off"><i
+                        class="fas fa-sort-amount-down mr-1"></i>Mayor.
+                    </label>
+                    <label class="btn btn-light" id="sortByCostU">
+                      <input type="radio" name="options" autocomplete="off"><i
+                        class="fas fa-sort-amount-up mr-1"></i>Menor.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="t-products p-2">
+                <h6 class="text-uppercase">Precio</h6>
+                <div class="p-lists">
+                  <div class="d-flex justify-content-between mt-2"> <input class="form-control" type="number"
+                      placeholder="min." id="rangeFilterCountMin"> </div>
+                  <div class="d-flex justify-content-between mt-2"> <input class="form-control" type="number"
+                      placeholder="máx." id="rangeFilterCountMax"> </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="btn-group" role="group">
+                      <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                      <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--FIN del Menu de botones -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+    <div class="container">
+      <div class="row" id="cat-list-container">
+      </div>
+    </div>
+
+
+
+  <div>
+
+
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
@@ -111,10 +151,18 @@
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
-  </body>
+</body>
+
 </html>
